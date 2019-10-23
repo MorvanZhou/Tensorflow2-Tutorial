@@ -49,7 +49,11 @@ history = model.fit(
 latest_model = tf.train.latest_checkpoint(ckpt_dir)
 model2 = create_model()
 model2.load_weights(latest_model)
-loss = model.evaluate(test_x, test_y, verbose=2)
+model2.compile(
+    optimizer=keras.optimizers.SGD(0.01),
+    loss=keras.losses.MeanSquaredError(),
+)
+loss = model2.evaluate(test_x, test_y, verbose=2)
 print("Restored ckpt model, loss: {:.2f}".format(loss))
 
 
