@@ -9,7 +9,7 @@ train_x, train_y = data_x[:900], data_y[:900]
 test_x, test_y = data_x[900:], data_y[900:]
 
 model = keras.models.Sequential([
-    keras.layers.Dense(10, activation=keras.activations.relu, input_shape=(1, )),
+    keras.layers.Dense(10, activation=keras.activations.relu),
     keras.layers.Dense(1),
 ])
 model.compile(

@@ -10,7 +10,7 @@ data_y = data_x * 3. + 2. + noise
 class Model(keras.Model):
     def __init__(self):
         super(Model, self).__init__()
-        self.l1 = keras.layers.Dense(10, activation=keras.activations.relu, input_shape=(1, ))
+        self.l1 = keras.layers.Dense(10, activation=keras.activations.relu)
         self.l2 = keras.layers.Dense(1)
 
     def call(self, x, training=None, mask=None):
